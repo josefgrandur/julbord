@@ -1,0 +1,577 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Prospektakt D.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDE8DA;
+    --paper-2:#E2DAC5;
+    --paper-3:#D9CFB2;
+    --ink:#2A2A20;
+    --ink-soft:#5A5644;
+    --olive:#4B5320;
+    --olive-deep:#33390f;
+    --khaki-line:#B4A97F;
+    --stamp-red:#8B3A34;
+    --stamp-red-deep:#6E2C27;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1B1A14;
+      --paper-2:#242218;
+      --paper-3:#302C1D;
+      --ink:#E9E2CC;
+      --ink-soft:#B5AC8C;
+      --olive:#94A356;
+      --olive-deep:#7C8B44;
+      --khaki-line:#544E38;
+      --stamp-red:#C46A5F;
+      --stamp-red-deep:#B85A50;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1B1A14;
+    --paper-2:#242218;
+    --paper-3:#302C1D;
+    --ink:#E9E2CC;
+    --ink-soft:#B5AC8C;
+    --olive:#94A356;
+    --olive-deep:#7C8B44;
+    --khaki-line:#544E38;
+    --stamp-red:#C46A5F;
+    --stamp-red-deep:#B85A50;
+    color-scheme: dark;
+  }
+
+  *{ box-sizing:border-box; }
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    padding-inline: 20px;
+    padding-block: 2.5rem 4rem;
+    line-height: 1.5;
+  }
+  .page{
+    max-width: 760px;
+    margin-inline: auto;
+  }
+  h1,h2,h3{ text-wrap: balance; margin: 0; }
+  .mono{ font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; }
+  .stencil{ font-family: "Special Elite", "Courier New", monospace; }
+
+  a{ color: var(--olive-deep); }
+  :root[data-theme="dark"] a, @media (prefers-color-scheme: dark){ a{ color: var(--olive); } }
+
+  /* ===== Cover ===== */
+  .cover{
+    border: 1.5px solid var(--khaki-line);
+    background: var(--paper-2);
+    padding: 1.75rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before{
+    content:"";
+    position:absolute; inset:6px;
+    border: 1px solid var(--khaki-line);
+    opacity: .6;
+    pointer-events: none;
+  }
+  .file-no{
+    font-size: .72rem;
+    letter-spacing: .12em;
+    color: var(--ink-soft);
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .4rem .9rem;
+    margin-bottom: 1.1rem;
+  }
+  .cover h1{
+    font-family: "Special Elite", "Courier New", monospace;
+    font-size: clamp(1.7rem, 6vw, 2.5rem);
+    letter-spacing: .03em;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  .cover .subhead{
+    margin-top: .5rem;
+    font-size: .95rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .meta-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px,1fr));
+    gap: .9rem 1.5rem;
+    margin-top: 1.4rem;
+    padding-top: 1.2rem;
+    border-top: 1px dashed var(--khaki-line);
+  }
+  .meta-item .label{
+    font-family: "JetBrains Mono", monospace;
+    font-size: .68rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display:block;
+    margin-bottom: .2rem;
+  }
+  .meta-item .value{ font-size: .98rem; }
+
+  .stamp-corner{
+    position:absolute;
+    top: 1.1rem; right: 1.1rem;
+    width: 84px; height: 84px;
+    border: 2.5px solid var(--stamp-red);
+    border-radius: 50%;
+    color: var(--stamp-red);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    font-family: "Special Elite", monospace;
+    font-size: .58rem;
+    letter-spacing: .06em;
+    line-height:1.15;
+    transform: rotate(-11deg);
+    opacity: .82;
+    mix-blend-mode: multiply;
+    padding: 6px;
+  }
+  :root[data-theme="dark"] .stamp-corner, @media (prefers-color-scheme: dark){ .stamp-corner{ mix-blend-mode: normal; } }
+
+  .cover-intro{
+    margin-top: 1.3rem;
+    font-size: .98rem;
+    color: var(--ink-soft);
+  }
+
+  /* ===== Section headers ===== */
+  .section-head{
+    margin-top: 3.2rem;
+    margin-bottom: 1.6rem;
+    display:flex;
+    align-items:baseline;
+    gap: .8rem;
+  }
+  .section-head .num{
+    font-family: "JetBrains Mono", monospace;
+    font-size: .8rem;
+    color: var(--khaki-line);
+    border: 1px solid var(--khaki-line);
+    padding: .1rem .45rem;
+  }
+  .section-head h2{
+    font-family: "Special Elite", monospace;
+    font-size: clamp(1.15rem, 4vw, 1.5rem);
+    letter-spacing: .02em;
+  }
+  .section-head .rule{
+    flex:1;
+    height:1px;
+    background: repeating-linear-gradient(90deg, var(--khaki-line) 0 6px, transparent 6px 11px);
+  }
+
+  /* ===== Timeline ===== */
+  .timeline{
+    position: relative;
+    padding-left: 34px;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left: 6px; top: 4px; bottom: 4px;
+    width: 2px;
+    background: repeating-linear-gradient(180deg, var(--khaki-line) 0 7px, transparent 7px 13px);
+  }
+  .op{
+    position: relative;
+    margin-bottom: 2rem;
+    background: var(--paper-2);
+    border: 1px solid var(--khaki-line);
+    padding: 1.1rem 1.2rem 1.25rem;
+    transition: border-color .18s ease, transform .18s ease;
+  }
+  .op:hover{
+    border-color: var(--olive);
+    transform: translateX(2px);
+  }
+  .op::before{
+    content:"";
+    position:absolute;
+    left: -34px; top: 1.35rem;
+    width: 13px; height: 13px;
+    border-radius: 50%;
+    background: var(--olive);
+    border: 2px solid var(--paper);
+    box-shadow: 0 0 0 1.5px var(--khaki-line);
+  }
+  .op-top{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .4rem .8rem;
+    margin-bottom: .55rem;
+  }
+  .op-year{
+    font-family: "JetBrains Mono", monospace;
+    font-size: .74rem;
+    letter-spacing: .06em;
+    color: var(--ink-soft);
+  }
+  .op-status{
+    font-family: "JetBrains Mono", monospace;
+    font-size: .62rem;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: var(--olive-deep);
+    border: 1px solid var(--khaki-line);
+    padding: .12rem .4rem;
+    white-space: nowrap;
+  }
+  :root[data-theme="dark"] .op-status, @media (prefers-color-scheme: dark){ .op-status{ color: var(--olive); } }
+  .op h3{
+    font-family: "Special Elite", monospace;
+    font-size: 1.12rem;
+    letter-spacing: .01em;
+    margin-bottom: .55rem;
+    color: var(--ink);
+  }
+  .op p{
+    font-size: .93rem;
+    color: var(--ink-soft);
+    max-width: 62ch;
+  }
+
+  /* ===== Competence ===== */
+  .comp-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .9rem;
+  }
+  @media (max-width: 520px){ .comp-grid{ grid-template-columns: 1fr; } }
+  .comp-card{
+    background: var(--paper-2);
+    border: 1px solid var(--khaki-line);
+    padding: .9rem 1rem;
+  }
+  .comp-label{
+    font-family: "JetBrains Mono", monospace;
+    font-size: .72rem;
+    letter-spacing: .04em;
+    color: var(--ink-soft);
+    margin-bottom: .5rem;
+  }
+  .comp-bar-track{
+    height: 8px;
+    background: var(--paper-3);
+    border: 1px solid var(--khaki-line);
+    margin-bottom: .35rem;
+  }
+  .comp-bar-fill{
+    height: 100%;
+    background: var(--olive);
+  }
+  .comp-val{
+    font-family: "JetBrains Mono", monospace;
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .comp-readout{
+    font-family: "Special Elite", monospace;
+    font-size: 1.02rem;
+    letter-spacing: .02em;
+    color: var(--stamp-red);
+    margin-bottom: .35rem;
+  }
+  .comp-note{
+    font-family: "JetBrains Mono", monospace;
+    font-size: .68rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  /* ===== Letter / application ===== */
+  .letter{
+    background: var(--paper-2);
+    border: 1px solid var(--khaki-line);
+    padding: 1.8rem 1.6rem;
+    position: relative;
+  }
+  .letter::before{
+    content:"";
+    position:absolute; inset: 7px;
+    border: 1px solid var(--khaki-line);
+    opacity:.55;
+    pointer-events:none;
+  }
+  .letter-to{
+    font-family: "JetBrains Mono", monospace;
+    font-size: .78rem;
+    letter-spacing: .05em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    margin-bottom: 1.1rem;
+  }
+  .letter p{
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    max-width: 62ch;
+  }
+  .letter p:last-of-type{ margin-bottom: 0; }
+  .sign-row{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items:flex-end;
+    gap: 1.5rem 2rem;
+    margin-top: 2rem;
+    padding-top: 1.2rem;
+    border-top: 1px dashed var(--khaki-line);
+  }
+  .sign-block{ min-width: 180px; }
+  .sign-name{
+    font-family: "Special Elite", monospace;
+    font-size: 1.15rem;
+    border-bottom: 1px solid var(--ink-soft);
+    padding-bottom: .3rem;
+    margin-bottom: .3rem;
+    display:inline-block;
+  }
+  .sign-sub{
+    font-family: "JetBrains Mono", monospace;
+    font-size: .68rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .stamps{
+    display:flex;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem 0 .5rem;
+  }
+  .stamp{
+    width: 128px; height: 128px;
+    border-radius: 50%;
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    font-family: "Special Elite", monospace;
+    letter-spacing: .05em;
+    line-height: 1.25;
+    padding: 10px;
+    transition: transform .2s ease;
+  }
+  .stamp:hover{ transform: scale(1.04); }
+  .stamp-solid{
+    border: 3px solid var(--stamp-red);
+    color: var(--stamp-red);
+    transform: rotate(-8deg);
+    font-size: .72rem;
+    mix-blend-mode: multiply;
+  }
+  :root[data-theme="dark"] .stamp-solid, @media (prefers-color-scheme: dark){ .stamp-solid{ mix-blend-mode: normal; } }
+  .stamp-dashed{
+    border: 3px dashed var(--olive);
+    color: var(--olive-deep);
+    transform: rotate(7deg);
+    font-size: .66rem;
+  }
+  :root[data-theme="dark"] .stamp-dashed .sd-status, @media (prefers-color-scheme: dark){ .stamp-dashed{ color: var(--olive); } }
+
+  footer{
+    margin-top: 3rem;
+    text-align:center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: .68rem;
+    letter-spacing: .08em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .op, .stamp{ transition: none; }
+  }
+</style>
+
+<div class="page">
+
+  <section class="cover">
+    <div class="stamp-corner">HEMLIG&shy;STÄMPLAD<br>AKT</div>
+    <div class="file-no">
+      <span>AKT NR. 1992-09-28</span>
+      <span>DIARIENUMMER: JB-2026/15</span>
+    </div>
+    <h1>Ansökan om Prospect-status</h1>
+    <div class="subhead">vid Julbordstraditionens Runda Bord</div>
+
+    <div class="meta-grid">
+      <div class="meta-item">
+        <span class="label">Sökande</span>
+        <span class="value">Josef D.</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Född</span>
+        <span class="value">1992</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Tjänstgöringstid</span>
+        <span class="value">2005 – pågående</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Sökt grad</span>
+        <span class="value">Prospect (prövotjänstgöring)</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Bifogat</span>
+        <span class="value">CV, portfolio, denna akt</span>
+      </div>
+    </div>
+
+    <p class="cover-intro">Härmed ansöker undertecknad om en plats som prospect vid Julbordets Runda Bord, i väntan på fullvärdigt medlemskap. Nedan följer en fullständig genomgång av de fälttåg som legat till grund för denna ansökan, sammanställda i kronologisk ordning från första mobilisering till nuvarande tjänstegrad.</p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="num">01</span>
+      <h2>Tjänstgöringshistorik</h2>
+      <span class="rule"></span>
+    </div>
+
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="num">02</span>
+      <h2>Fältmässiga Mätvärden</h2>
+      <span class="rule"></span>
+    </div>
+
+    <div class="comp-grid" id="comp-grid"></div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="num">03</span>
+      <h2>Formell Ansökan</h2>
+      <span class="rule"></span>
+    </div>
+
+    <div class="letter">
+      <div class="letter-to">Till Julbordskommittén</div>
+      <p>Härmed ansöker undertecknad, Josef D. (f. 1992), om prospect-status i Er julbordstradition.</p>
+      <p>Bifogat denna ansökan följer en fullständig meritförteckning omfattande femton dokumenterade fälttåg under perioden 2005–2026, däribland två utlandstjänstgöringar, ett flerårigt ställningskrig och minst en incident som ledde till organisatoriska åtgärder på en arbetsplats som inte var min egen.</p>
+      <p>Undertecknad intygar att ovanstående meriter är ärligt vunna, om än sällan strategiskt vunna, och förbinder sig vid godkänd prospect-status att fullfölja prövotjänstgöringen med bibehållen entusiasm och successivt förbättrat omdöme, i väntan på att av kommittén befordras till fullvärdig medlem.</p>
+      <p>Ansökan inges i tjänstens fulla allvar, trots allt.</p>
+
+      <div class="sign-row">
+        <div class="sign-block">
+          <div class="sign-name">Josef D.</div>
+          <div class="sign-sub">Sökande, prospect</div>
+        </div>
+        <div class="sign-block">
+          <div class="sign-name">Stockholm</div>
+          <div class="sign-sub">28 september 2026</div>
+        </div>
+      </div>
+
+      <div class="stamps">
+        <div class="stamp stamp-solid">ANSÖKAN<br>INGIVEN<br>28/9 2026</div>
+        <div class="stamp stamp-dashed">AVVAKTAR<br>KOMMITTÉNS<br>GODKÄNNANDE</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>— Slut på akten —</footer>
+
+</div>
+
+<script>
+(function(){
+  var ops = [
+    {year:"ca 2005", status:"Arkiverad", title:"Det första fälttåget",
+     text:"Utan rang, utan träning, utan rädsla. Ingen strategi fanns nedtecknad, bara instinkt och en obeskrivlig vilja att kliva fram. Här föddes en soldat, och varje senare kampanj bär spår av denna första mobilisering."},
+    {year:"2008", status:"Bekräftad seger", title:"Slaget om Portarna",
+     text:"Gymnasiets portar slogs upp och en ny front öppnades utan förvarning. Okänd terräng, äldre och mer erfarna fiender, inget skydd att tala om. Linjen höll ändå, och ett rykte började ta form."},
+    {year:"ca 2010", status:"Sekretessgrad: hemlig", title:"Operation Deep",
+     text:"En nattlig specialoperation genomförd under svåra ljus- och ljudförhållanden. Merparten av förloppet förblir sekretessbelagt av goda skäl. Vad som kan bekräftas är att kandidaten gick in i mörkret, mötte trycket, och kom ut med värdigheten intakt."},
+    {year:"2010–2011", status:"Fyrtio veckor", title:"Torsdagsoffensiven vid Sticky Fingers",
+     text:"Fyrtio veckor i rad, samma front, samma klockslag. Kön besegrades, kylan uthärdades och garderoben forcerades varje torsdag på nytt. Ingen enskild seger stack ut – det var uthålligheten i sig som blev vapnet, och den smiddes här."},
+    {year:"2010–2013", status:"Duration: 3 år", title:"Karismafronten",
+     text:"Tre år av lågintensiv men obruten krigföring. Inga snabba avgöranden, inga stora segerrapporter att skicka hem. Bara närvaro, vecka efter vecka, i terräng som sällan gav något gratis. Fronten övergavs aldrig, och det räknas som seger nog."},
+    {year:"1 juni 2011", status:"Avgörande seger", title:"Studentoffensiven",
+     text:"Vit mössa som fälttecken och hela kompaniet mobiliserat för en enda avgörande dag. Ceremoniel, fanfar och en energi som inte gick att simulera fram. Övergången från rekryt till fältherre fullbordades här, inför öppen ridå."},
+    {year:"2011", status:"Utlandsstyrkan", title:"Den Cypriotiska Kampanjen",
+     text:"Den första insatsen på främmande mark, långt utanför invanda försörjningslinjer. Hettan prövade disciplinen, nätterna prövade omdömet, och ingen karta fanns att luta sig mot. Uppdraget fullföljdes ändå, utan diplomatisk incident av betydelse."},
+    {year:"ca 2013", status:"Urban närstrid", title:"Slaget vid Excet",
+     text:"Göteborgs hårdaste och tätaste front, där utrymmet var minimalt och priserna direkt fientliga. Tempot var obarmhärtigt och trängseln konstant, men positionen hölls från insläpp till sista anrop. En seger vunnen på ren närstridsförmåga."},
+    {year:"2014", status:"Utlandsstyrkan", title:"Zante-doktrinen",
+     text:"Den andra utlandsinsatsen, nu genomförd med härdad erfarenhet och ett betydligt större, om än inte alltid berättigat, självförtroende. Sol, uthållighet och kontrollerad självöverskattning definierade uppdraget, som avslutades med äran fullt i behåll."},
+    {year:"ca 2014", status:"Segerrik", title:"Valand-manövern",
+     text:"En kampanj som krävde snabba förflyttningar och exakt läsning av styrkeförhållandena i realtid. Mellan bar, mingel och dansgolv rörde sig kandidaten med en kontroll som sällan vacklade, och operationen fördes till historieböckerna som otvetydigt segerrik."},
+    {year:"ca 2016", status:"Öppet fält", title:"Bersåbelägringen",
+     text:"Ett fält utan tak, utan väggar och utan tydlig kommandostruktur att luta sig mot. Väderleken var en egen motståndare, folkmassan en annan, och baren en tredje front i sig. Kandidaten navigerade genom kvällens skärmytslingar och lämnade slagfältet oskadad, om än något desorienterad inför hemfärden."},
+    {year:"2018–2023", status:"Duration: 5 år", title:"AW-offensiven",
+     text:"Fem års sofistikerad krigföring i gränslandet mellan kontor och fältliv. Rutinen var densamma varje gång: infinna sig direkt från arbetet, förstärka moralen vid bordet, hålla samtalslinjen levande, och dra sig tillbaka innan operationen övergick i förlustaffär. En doktrin förfinad till konstform."},
+    {year:"2020", status:"Särskilt tillbud", title:"Slaget vid Essity",
+     text:"En företagsfest som eskalerade bortom all ordinarie planering. Vad som inleddes som rutinmässig trupptillhörighet urartade till öppen konflikt, med sådan kraft att organisationen aldrig återhämtade sig – uppsägningar följde i kölvattnet, och händelsen lever kvar i företagets muntliga historieskrivning. Kandidaten befann sig mitt i händelsernas centrum, överlevde utan formella påföljder, och drog sig tillbaka med ett rykte stärkt snarare än skadat."},
+    {year:"2023–2026", status:"Pågående", title:"De Civila Åren",
+     text:"Barnen anlände, och en ny, permanent front öppnades på hemmaplan. Sömnen blev en bristvara att ransonera, natten blev vakttjänst och varje social insats krävde numera en godkänd mobiliseringsplan i god tid. Kandidaten vek sig aldrig – bara anpassade doktrinen, skar ner på antalet insatser och höjde precisionen i varje enskild."},
+    {year:"2026", status:"Till förfogande", title:"Veteranens återkomst",
+     text:"Rekryten vann sina slag genom ren volym. Veteranen gör tvärtom: väljer sina fronter med omsorg, mobiliserar utan onödig rörelse, och levererar exakt när uppdraget kräver det. Nu står han åter till förfogande, för särskild tjänstgöring."}
+  ];
+
+  var tl = document.getElementById("timeline");
+  ops.forEach(function(op, i){
+    var el = document.createElement("article");
+    el.className = "op";
+    el.innerHTML =
+      '<div class="op-top">' +
+        '<span class="op-year mono">N:o ' + String(i+1).padStart(2,'0') + ' &middot; ' + op.year + '</span>' +
+        '<span class="op-status">' + op.status + '</span>' +
+      '</div>' +
+      '<h3>' + op.title + '</h3>' +
+      '<p>' + op.text + '</p>';
+    tl.appendChild(el);
+  });
+
+  var comps = [
+    {label:"MOBILISERINGSFÖRMÅGA", type:"bar", val:8,
+     sub:"Snabb utryckning vid kort varsel, given tveksam förvarning"},
+    {label:"TAKTISK UTHÅLLIGHET", type:"bar", val:10,
+     sub:"Obruten sedan 2005, se Karismafronten"},
+    {label:"FÖRMÅGA TILL ORDNAD RETRÄTT", type:"bar", val:4,
+     sub:"Sällan ordnad, sällan i tid, sällan efterlevd"},
+    {label:"URBAN NÄRSTRID", type:"bar", val:9,
+     sub:"Referensfall: Slaget vid Excet"},
+    {label:"SPECIALUPPDRAGSBEREDSKAP", type:"bar", val:7,
+     sub:"Aktiveras vid kort varsel, se Operation Deep"},
+    {label:"FÄLTMÄSSIG BORDSTJÄNST", type:"bar", val:10,
+     sub:"Referensklass, se AW-offensiven"}
+  ];
+  var grid = document.getElementById("comp-grid");
+  comps.forEach(function(c){
+    var el = document.createElement("div");
+    el.className = "comp-card";
+    var body = c.type === "bar"
+      ? '<div class="comp-bar-track"><div class="comp-bar-fill" style="width:' + (c.val*10) + '%"></div></div>' +
+        '<div class="comp-val">' + c.val + '/10</div>'
+      : '<div class="comp-readout">' + c.display + '</div>';
+    el.innerHTML =
+      '<div class="comp-label mono">' + c.label + '</div>' +
+      body +
+      '<div class="comp-note">' + c.sub + '</div>';
+    grid.appendChild(el);
+  });
+})();
+</script>
+
+</body></html>
